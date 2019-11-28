@@ -1,0 +1,6 @@
+extern/
+.vs
+test_src/out
+out/
+CMakeSettings.json
+/test_src
