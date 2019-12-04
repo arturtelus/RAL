@@ -5,6 +5,7 @@
 
 namespace ral
 {
+	///Stores array of openal buffer objects.
 	template<SizeT number_of_names>
 	class Buffers : public ALNames<number_of_names>
 	{

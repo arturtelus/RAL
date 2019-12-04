@@ -8,6 +8,7 @@ namespace ral
 	///Set listener properties with error checking
 	struct Listener
 	{
+		///3xALfloat std::tuple alias
 		using ALfloat3T = std::tuple<ALfloat, ALfloat, ALfloat>;
 
 		///Get float property of the listener. Properties: AL_GAIN

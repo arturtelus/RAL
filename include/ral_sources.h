@@ -5,6 +5,7 @@
 
 namespace ral
 {
+	///This class stores array of openal sources.
 	template<SizeT number_of_names>
 	class Sources : public ALNames<number_of_names>
 	{

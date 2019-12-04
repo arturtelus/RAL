@@ -4,6 +4,7 @@
 
 namespace ral
 {
+	///This class manages OpenAL context.
 	class Context
 	{
 		///Closes openal context

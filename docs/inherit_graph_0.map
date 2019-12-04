@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classral_1_1_a_l_names.html" title="Stores specific number of openal names. " alt="" coords="5,39,161,80"/>
+<area shape="rect" id="node2" href="$classral_1_1_buffers.html" title="Stores array of openal buffer objects. " alt="" coords="213,5,352,47"/>
+<area shape="rect" id="node3" href="$classral_1_1_sources.html" title="This class stores array of openal sources. " alt="" coords="209,71,356,112"/>
+</map>

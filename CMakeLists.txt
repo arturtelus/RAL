@@ -26,10 +26,29 @@ target_compile_definitions(${RAL_LIB_NAME} PRIVATE
 	$<$<BOOL:${USE_WIN_CREATIVE_OPENAL}>:USE_CREATIVE_OPENAL>
 )
 
+#External libraries
 find_package(openal-soft CONFIG REQUIRED)
 target_link_libraries(${RAL_LIB_NAME} PUBLIC OpenAL::OpenAL)
 
 #TODO: creative openal
-#TODO documentation
+
+#Documentation
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+	if(DOXYGEN_DOT_EXECUTABLE)
+		set(USE_DOXYGEN_DOT "YES")
+	endif()
+	configure_file("${PROJECT_SOURCE_DIR}/Doxyfile.in" "${PROJECT_BINARY_DIR}/Doxyfile" @ONLY)
+	add_custom_target(BuildDoxygenDocs ALL COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+		WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+		COMMENT "Doxygen, generating docs."
+	VERBATIM)
+	add_custom_command(TARGET BuildDoxygenDocs POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_BINARY_DIR}/docs/html" "${PROJECT_SOURCE_DIR}/docs"
+	COMMENT "Copy docs into project directory.")
+else()
+	message(STATUS "Doxygen not found!")
+endif()
+
 #TODO package
 #TODO installation
